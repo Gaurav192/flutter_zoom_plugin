@@ -82,7 +82,7 @@ public class ZoomView  implements PlatformView,
         }
 
         ZoomSDKInitParams initParams = new ZoomSDKInitParams();
-        initParams.jwtToken = options.get("sdkToken");
+        initParams.jwtToken = options.get("jwtToken");
         initParams.appKey = options.get("appKey");
         initParams.appSecret = options.get("appSecret");
         initParams.domain = options.get("domain");
@@ -135,7 +135,6 @@ public class ZoomView  implements PlatformView,
         opts.no_dial_in_via_phone = parseBoolean(options, "disableDialIn", false);
         opts.no_disconnect_audio = parseBoolean(options, "noDisconnectAudio", false);
         opts.no_audio = parseBoolean(options, "noAudio", false);
-
         JoinMeetingParams params = new JoinMeetingParams();
 
         params.displayName = options.get("userId");
@@ -175,7 +174,7 @@ public class ZoomView  implements PlatformView,
         params.displayName = options.get("displayName");
         params.meetingNo = options.get("meetingId");
 		params.userType = MeetingService.USER_TYPE_API_USER;
-		params.zoomToken = options.get("zoomToken");
+//		params.zoomToken = options.get("zoomToken");
 		params.zoomAccessToken = options.get("zoomAccessToken");
 		
         meetingService.startMeetingWithParams(context, params, opts);
